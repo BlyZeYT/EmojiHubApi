@@ -11,36 +11,36 @@ public interface IEmojiHubClient
     /// <summary>
     /// Asynchronously fetches a random <see cref="Emoji"/>
     /// </summary>
-    public ValueTask<Emoji> GetRandom();
+    public ValueTask<Emoji> GetRandomAsync();
 
     /// <summary>
     /// Fetches all <see cref="Emoji"/> as <see cref="IAsyncEnumerable{T}"/>
     /// </summary>
-    public IAsyncEnumerable<Emoji> GetAll();
+    public IAsyncEnumerable<Emoji> GetAllAsync();
 
     /// <summary>
     /// Asynchronously fetches a random <see cref="Emoji"/> by a <see cref="Category"/>
     /// </summary>
     /// <param name="category">The category to search by</param>
-    public ValueTask<Emoji> GetRandomByCategory(Category category);
+    public ValueTask<Emoji> GetRandomByCategoryAsync(Category category);
 
     /// <summary>
     /// Asynchronously fetches all <see cref="Emoji"/> as <see cref="IAsyncEnumerable{T}"/> by a <see cref="Category"/>
     /// </summary>
     /// <param name="category">The category to search by</param>
-    public IAsyncEnumerable<Emoji> GetAllByCategory(Category category);
+    public IAsyncEnumerable<Emoji> GetAllByCategoryAsync(Category category);
 
     /// <summary>
     /// Asynchronously fetches a random <see cref="Emoji"/> by a <see cref="Group"/>
     /// </summary>
     /// <param name="group">The group to search by</param>
-    public ValueTask<Emoji> GetRandomByGroup(Group group);
+    public ValueTask<Emoji> GetRandomByGroupAsync(Group group);
 
     /// <summary>
     /// Asynchronously fetches all <see cref="Emoji"/> as <see cref="IAsyncEnumerable{T}"/> by a <see cref="Group"/>
     /// </summary>
     /// <param name="group">The group to search by</param>
-    public IAsyncEnumerable<Emoji> GetAllByGroup(Group group);
+    public IAsyncEnumerable<Emoji> GetAllByGroupAsync(Group group);
 
     /// <summary>
     /// Disposes the client
@@ -68,7 +68,7 @@ public sealed class EmojiHubClient : IEmojiHubClient, IDisposable
     /// <summary>
     /// Asynchronously fetches a random <see cref="Emoji"/>
     /// </summary>
-    public async ValueTask<Emoji> GetRandom()
+    public async ValueTask<Emoji> GetRandomAsync()
     {
         string json = await _client.GetStringAsync($"{BASE_URL}/random");
 
@@ -78,7 +78,7 @@ public sealed class EmojiHubClient : IEmojiHubClient, IDisposable
     /// <summary>
     /// Fetches all <see cref="Emoji"/> as <see cref="IAsyncEnumerable{T}"/>
     /// </summary>
-    public async IAsyncEnumerable<Emoji> GetAll()
+    public async IAsyncEnumerable<Emoji> GetAllAsync()
     {
         string json = await _client.GetStringAsync($"{BASE_URL}/all");
 
@@ -92,7 +92,7 @@ public sealed class EmojiHubClient : IEmojiHubClient, IDisposable
     /// Asynchronously fetches a random <see cref="Emoji"/> by a <see cref="Category"/>
     /// </summary>
     /// <param name="category">The category to search by</param>
-    public async ValueTask<Emoji> GetRandomByCategory(Category category)
+    public async ValueTask<Emoji> GetRandomByCategoryAsync(Category category)
     {
         string json = await _client.GetStringAsync($"{BASE_URL}/random/category_{category.Name}");
 
@@ -103,7 +103,7 @@ public sealed class EmojiHubClient : IEmojiHubClient, IDisposable
     /// Asynchronously fetches all <see cref="Emoji"/> as <see cref="IAsyncEnumerable{T}"/> by a <see cref="Category"/>
     /// </summary>
     /// <param name="category">The category to search by</param>
-    public async IAsyncEnumerable<Emoji> GetAllByCategory(Category category)
+    public async IAsyncEnumerable<Emoji> GetAllByCategoryAsync(Category category)
     {
         string json = await _client.GetStringAsync($"{BASE_URL}/all/category_{category.Name}");
 
@@ -121,7 +121,7 @@ public sealed class EmojiHubClient : IEmojiHubClient, IDisposable
     /// Asynchronously fetches a random <see cref="Emoji"/> by a <see cref="Group"/>
     /// </summary>
     /// <param name="group">The group to search by</param>
-    public async ValueTask<Emoji> GetRandomByGroup(Group group)
+    public async ValueTask<Emoji> GetRandomByGroupAsync(Group group)
     {
         string json = await _client.GetStringAsync($"{BASE_URL}/random/group_{group.Name}");
 
@@ -132,7 +132,7 @@ public sealed class EmojiHubClient : IEmojiHubClient, IDisposable
     /// Asynchronously fetches all <see cref="Emoji"/> as <see cref="IAsyncEnumerable{T}"/> by a <see cref="Group"/>
     /// </summary>
     /// <param name="group">The group to search by</param>
-    public async IAsyncEnumerable<Emoji> GetAllByGroup(Group group)
+    public async IAsyncEnumerable<Emoji> GetAllByGroupAsync(Group group)
     {
         string json = await _client.GetStringAsync($"{BASE_URL}/all/group_{group.Name}");
 

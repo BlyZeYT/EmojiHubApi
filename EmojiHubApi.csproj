@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageId>BlyZe.$(AssemblyName)</PackageId>
+    <Title>EmojiHubApi</Title>
+    <Authors>BlyZe</Authors>
+    <Description>Library for the EmojiHub Website (No API Key needed)</Description>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageTags>blyze;emojihub; emoji hub; emoji hub api; emojihub api; emojihubapi;emoji</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/BlyZeYT/EmojiHubApi</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/BlyZeYT/EmojiHubApi</RepositoryUrl>
+    <Version>1.1.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
