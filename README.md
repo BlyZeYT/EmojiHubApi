@@ -7,23 +7,23 @@ var client = new EmojiHubClient();
 ```
 ### Get all Emojis from the Website
 ```
-IAsyncEnumerable<Emoji> allEmojis = client.GetAll();
+IAsyncEnumerable<Emoji> allEmojis = client.GetAllAsync();
 ```
 ### Get a random Emoji from the Website asynchronously
 ```
-Emoji randomEmojis = await client.GetRandom();
+Emoji randomEmojis = await client.GetRandomAsync();
 ```
 ### Get Emojis by a category
 ```
-IAsyncEnumerable<Emoji> allEmojis = client.GetAllByCategory(Category.Objects);
+IAsyncEnumerable<Emoji> allEmojis = client.GetAllByCategoryAsync(Category.Objects);
 
-Emoji randomEmoji = await client.GetRandomByCategory(Category.Objects);
+Emoji randomEmoji = await client.GetRandomByCategoryAsync(Category.Objects);
 ```
 ### Get Emojis by a group
 ```
-IAsyncEnumerable<Emoji> allEmojis = client.GetAllByGroup(Group.Activities);
+IAsyncEnumerable<Emoji> allEmojis = client.GetAllByGroupAsync(Group.Activities);
 
-Emoji randomEmoji = await client.GetRandomByGroup(Group.Activities);
+Emoji randomEmoji = await client.GetRandomByGroupAsync(Group.Activities);
 ```
 ### Dispose the EmojiHubClient
 ```
