@@ -1,5 +1,8 @@
 # EmojiHubApi
 Library for the EmojiHub Website (No API Key needed)
+
+> 🟡 **Project status**: Maintenance mode<sup>[[?]](https://github.com/BlyZeYT/.github/blob/master/project-status.md)</sup>
+
 ## How to use
 ### Create a new instance of the EmojiHubClient
 ```
